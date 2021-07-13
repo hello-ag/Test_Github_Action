@@ -5,4 +5,4 @@ jobs:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v2
-      - run: ssh -i ~/.ssh/github_action_Stretch_key hello-robot@98.234.153.4 -p 43770
+      - run: ssh ${{ secrets.STRETCH_SSH_KEY_GITHUB_ACTION }} hello-robot@98.234.153.4 -p 43770
