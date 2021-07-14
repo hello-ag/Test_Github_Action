@@ -5,4 +5,9 @@ jobs:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v2
-      - run: ssh ${{ secrets.STRETCH_SSH_KEY_GITHUB_ACTION }} hello-robot@98.234.153.4 -p 43770
+      - shell: bash
+        run: echo "$SSH_KEY" > the_key
+        env:
+          SSH_KEY: ${{ secrets.STRETCH_SSH_KEY_GITHUB_ACTION }}
+      - name: Log into stretch using ssh
+		  run: ssh -i ${{ github.workspace }}/the_key hello-robot@98.234.153.4 -p 43770
