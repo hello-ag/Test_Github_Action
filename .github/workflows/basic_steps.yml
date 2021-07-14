@@ -1,7 +1,7 @@
 name: basic steps
 on: [push]
 jobs:
-  echo-name:
+  ssh-connection-teleop:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v2
