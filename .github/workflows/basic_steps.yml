@@ -11,4 +11,4 @@ jobs:
         env:
           SSH_KEY: ${{ secrets.STRETCH_SSH_KEY_GITHUB_ACTION }}
       - name: Log into stretch using ssh
-        run: ssh -i the_key hello-robot@98.234.153.4 -p 43770
+        run: ssh -tt -i the_key hello-robot@98.234.153.4 -p 43770
