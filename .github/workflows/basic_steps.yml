@@ -13,7 +13,4 @@ jobs:
       - run: cat the_key
       - run: chmod 400 the_key
       - name: Log into stretch using ssh
-        run: cat the_key ;ssh -i the_key hello-robot@98.234.153.4 -p 43770 -tt -o StrictHostKeyChecking=no
-      - name: output file content of setup.py in stretch body
-        run: cat repos/stretch_body/body/setup.py
-      - run: exit
+        run: cat the_key ;ssh -i the_key hello-robot@98.234.153.4 -p 43770 -tt -o StrictHostKeyChecking=no cat repos/stretch_body/body/setup.py exit
